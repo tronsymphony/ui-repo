@@ -1,0 +1,106 @@
+// Request Appointment Form
+
+// Input styles
+@mixin selectStyles {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  text-align: left;
+
+  box-shadow: none;
+
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: auto;
+  text-transform: capitalize;
+  border: none;
+
+  background-color: transparent;
+
+  margin-top: 25px;
+  border-bottom: none;
+  padding: 5px 0;
+  line-height: 20px;
+
+  font-weight: 300;
+  font-size: 16px;
+  color: #4D4D4D;
+  letter-spacing: 0em;
+  line-height: 1.875;
+  background-color: $f;
+  padding: 5px 20px;
+  padding: 5px 20px;
+  border: 1px solid #A3CD64;
+  border-radius: 0;
+
+}
+
+@mixin placeholderText {
+  color: rgba($color: #363636, $alpha: 1);
+  font-style: normal;
+
+  font-weight: 300;
+  font-size: 16px;
+  color: #4D4D4D;
+  letter-spacing: 0em;
+  line-height: 1.875;
+
+}
+
+input.form-control {
+  @include selectStyles;
+
+  &::placeholder {
+    @include placeholderText;
+  }
+
+  &:hover {
+    background-color: rgba($f, 0.1);
+    color: #363636;
+
+    &::placeholder {
+      color: #363636;
+    }
+  }
+}
+
+select.form-control {
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23000000' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+    no-repeat right 0.75rem center/8px 10px;
+  @include selectStyles;
+  text-transform: capitalize;
+  option {
+    text-transform: capitalize;
+  }
+
+  &::placeholder {
+    @include placeholderText;
+  }
+
+  &:hover {
+    background-color: rgba($f, 0.1);
+    color: #363636;
+    &::placeholder {
+      color: #363636;
+    }
+  }
+}
+
+textarea.form-control {
+  @include selectStyles;
+
+  &::placeholder {
+    @include placeholderText;
+  }
+
+  &:hover {
+    background-color: rgba($f, 0.1);
+    color: #363636;
+    &::placeholder {
+      color: #363636;
+    }
+  }
+}
