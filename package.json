@@ -13,6 +13,9 @@
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "wp-pot": "wp-pot --src '*.php' --dest-file 'languages/_s.pot' --domain '_s'"
   },
+  "engines" : { 
+    "node" : ">=14.20.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+bitbucket/_s-with-webpack.git"

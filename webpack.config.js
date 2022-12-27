@@ -2,8 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const DEV = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -16,7 +14,7 @@ module.exports = {
     filename: '[name]-bundle.js'
   },
   mode: DEV ? 'development' : 'production',
-  devtool: 'source-map',
+  devtool: 'eval',
   module: {
     rules: [
       {
@@ -60,12 +58,10 @@ module.exports = {
     // new StyleLintPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
-    }),
-    new BrowserSyncPlugin({
-      files: '**/*.php',
-      proxy: 'http://localhost:8888/radiant-wp',
     })
+   
   ],
+ 
   optimization: {
     minimizer: [new UglifyJsPlugin(), new OptimizeCssAssetsPlugin()]
   }
